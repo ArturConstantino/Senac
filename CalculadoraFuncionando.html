@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Inicio de JS</title>
+        <meta name="description" content="Inicio de Js">
+ 
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div>
+            <h1 id='title'>Online Calculator</h1>
+            <div  >
+                <h5>Resultado</h5>
+                     <input id='resultado' class="textview" name='textview'> 
+                <h5>Conta</h5>
+                    <input id='conta' class="textview" name='textview'> 
+                             
+                  <h5> </h5>
+                  
+                    <table>
+                        <td>
+                            <input type="button" class='limpar' value="C">
+                            <input type="button" class='remove'   value="<">
+                            <input type="button" class='button'   value="/">
+                            <input type="button" class='button'  value="*">
+                        </td>
+                        <tr>
+                            <td>
+                                <input type="button" class='button'   value="7">
+                                <input type="button" class='button'  value="8">
+                                <input type="button" class='button'  value="9">
+                                <input type="button" class='button'  value="+">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" class='button'  value="4">
+                                <input type="button" class='button'  value="5">
+                                <input type="button" class='button'  value="6">
+                                <input type="button" class='button'   value="-">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" class='button'  value="1">
+                                <input type="button" class='button'  value="2">
+                                <input type="button" class='button'   value="3">
+                                <input type="button" class='igual'   value="=">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="hidden">
+                                <input type='button' value='0'  class='button' id='n0'>
+                                <input type='button' value='.'  class='button' id='n0'>
+                            </td>
+                        </tr>
+                </table>
+                <script>
+                 
+                    $('.button').click(
+                    function(){
+                       
+                    var euMesmo=   $(this).val(); 
+                        
+                    var valorAtual= $('#conta').val();
+                   
+                   $('#conta').val(valorAtual+euMesmo); 
+                        
+                    }
+                    );
+                
+                    
+                   $('.limpar').click(
+                    function(){
+                    
+                   $('#resultado').val(''); 
+                   $('#conta').val(''); 
+                        
+                    }
+                    );
+                
+                    
+                         $('.igual').click(
+                    function(){
+                    
+                   $('#resultado').val(eval($('#conta').val( ))); 
+                    
+                        
+                    }
+                    );
+                    
+                         $('.remove').click(
+                    function(){
+                    
+                  var v= $('#conta').val( );
+                        
+                        
+                    $('#conta').val(v.slice(0,-1));
+                        
+                    }
+                    );
+                    
+                    
+                    
+                
+                </script>     
+            </div>
+        </div>
+    </body>
+</html>
